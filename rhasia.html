@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Siti Mutiaa 💖</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      overflow:hidden;
+      font-family:'Poppins',sans-serif;
+      background:#ffd6e7;
+    }
+
+    .page{
+      width:100%;
+      height:100vh;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      padding:20px;
+    }
+
+    .active{
+      display:flex;
+    }
+
+    /* ================= HALAMAN 1 ================= */
+
+    #page1{
+      background:linear-gradient(135deg,#ffbfd5,#ffd8e8,#ffe8f2);
+    }
+
+    .envelope{
+      position:relative;
+      width:320px;
+      height:220px;
+      background:#fff;
+      border-radius:15px;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:
+      0 15px 35px rgba(255,105,180,0.3),
+      inset 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .envelope:hover{
+      transform:translateY(-8px) scale(1.03);
+    }
+
+    .envelope::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:0;
+      height:0;
+      border-left:160px solid transparent;
+      border-right:160px solid transparent;
+      border-top:115px solid #ff77a8;
+      border-radius:10px;
+    }
+
+    .letter-text{
+      position:absolute;
+      bottom:40px;
+      width:100%;
+      font-size:24px;
+      color:#ff4f8a;
+      font-weight:600;
+      letter-spacing:1px;
+    }
+
+    .small-love{
+      margin-top:30px;
+      font-size:15px;
+      color:#ff6b9c;
+    }
+
+    /* ================= HALAMAN 2 ================= */
+
+    #page2{
+      background:linear-gradient(135deg,#ffe2ee,#ffd1e5,#ffc2dd);
+      color:#ff4d88;
+    }
+
+    .title{
+      font-size:40px;
+      font-weight:700;
+      margin-bottom:25px;
+      font-family:'Pacifico',cursive;
+    }
+
+    .apology{
+      max-width:700px;
+      font-size:18px;
+      line-height:1.9;
+      background:rgba(255,255,255,0.45);
+      padding:30px;
+      border-radius:25px;
+      backdrop-filter:blur(8px);
+      box-shadow:0 10px 30px rgba(255,105,180,0.2);
+    }
+
+    .next-btn{
+      margin-top:35px;
+      padding:15px 40px;
+      border:none;
+      border-radius:40px;
+      background:#ff5f99;
+      color:white;
+      font-size:17px;
+      font-weight:500;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(255,105,180,0.3);
+    }
+
+    .next-btn:hover{
+      transform:scale(1.05);
+      background:#ff3f83;
+    }
+
+    /* ================= HALAMAN 3 ================= */
+
+    #page3{
+      background:linear-gradient(180deg,#ffc1d9,#ffb3d1,#ffa8cb);
+    }
+
+    .flower{
+      position:absolute;
+      animation:float linear infinite;
+      opacity:0.9;
+      filter:drop-shadow(0 5px 8px rgba(0,0,0,0.15));
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(110vh) rotate(0deg) scale(0.8);
+      }
+
+      100%{
+        transform:translateY(-120vh) rotate(360deg) scale(1.2);
+      }
+    }
+
+    .center-box{
+      position:relative;
+      z-index:10;
+      background:rgba(255,255,255,0.18);
+      padding:40px 50px;
+      border-radius:35px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 40px rgba(255,255,255,0.3);
+      border:1px solid rgba(255,255,255,0.4);
+    }
+
+    .love-title{
+      font-family:'Pacifico',cursive;
+      font-size:42px;
+      color:white;
+      text-shadow:0 5px 10px rgba(0,0,0,0.15);
+      margin-bottom:20px;
+    }
+
+    .love-sub{
+      color:#fff;
+      font-size:17px;
+      line-height:1.8;
+    }
+
+    .exit-btn{
+      margin-top:30px;
+      padding:14px 35px;
+      border:none;
+      border-radius:35px;
+      background:white;
+      color:#ff4f8a;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .exit-btn:hover{
+      transform:scale(1.06);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+
+      .envelope{
+        width:260px;
+        height:190px;
+      }
+
+      .envelope::before{
+        border-left:130px solid transparent;
+        border-right:130px solid transparent;
+        border-top:95px solid #ff77a8;
+      }
+
+      .title{
+        font-size:33px;
+      }
+
+      .love-title{
+        font-size:34px;
+      }
+
+      .apology{
+        font-size:16px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HALAMAN 1 -->
+  <section class="page active" id="page1">
+
+    <div class="envelope" onclick="showPage(2)">
+      <div class="letter-text">
+        klik disini demas💐
+      </div>
+    </div>
+
+    <div class="small-love">
+      permintaan maaf dari faihhh lucuu💖
+    </div>
+
+  </section>
+
+  <!-- HALAMAN 2 -->
+  <section class="page" id="page2">
+
+    <div class="title">
+      maafinn aku ya demas💐
+    </div>
+
+    <div class="apology">
+      heiii heiii maapinn akuu yaaa tadiib akuu gaaa sempet izinn ke kamu kalo aku mauu less maapp yaa akuu salah akuu mintaa maapp disitu posisi hp aku udah 1 persen udaa ngelag banget,ini aku engga nyari pembelaan,akuu emangg salahh maaapin aku yaa lainn kaliii akuu kabarinn yaaaa sekalii lagii aku minta maap ya demasss💐
+    </div>
+
+    <button class="next-btn" onclick="showPage(3)">
+      klik lagi demass💐
+    </button>
+
+  </section>
+
+  <!-- HALAMAN 3 -->
+  <section class="page" id="page3">
+
+    <div class="center-box">
+
+      <div class="love-title">
+        aku sayang kamu<br>
+          s💐
+      </div>
+
+      <div class="love-sub">
+      </div>
+
+      <button class="exit-btn" onclick="closeWebsite()">
+      </button>
+
+    </div>
+
+  </section>
+
+  <script>
+
+    // GANTI HALAMAN
+    function showPage(page){
+      document.querySelectorAll('.page').forEach(p=>{
+        p.classList.remove('active');
+      });
+
+      document.getElementById('page'+page).classList.add('active');
+    }
+
+    // EFEK BUNGA 3D
+    const page3 = document.getElementById("page3");
+
+    const flowers = ["🌸","🌷","💮","🌺","🌹"];
+
+    for(let i=0;i<120;i++){
+
+      const flower = document.createElement("div");
+
+      flower.classList.add("flower");
+
+      flower.innerHTML =
+      flowers[Math.floor(Math.random()*flowers.length)];
+
+      flower.style.left = Math.random()*100 + "vw";
+
+      flower.style.fontSize =
+      (18 + Math.random()*35) + "px";
+
+      flower.style.animationDuration =
+      (4 + Math.random()*6) + "s";
+
+      flower.style.animationDelay =
+      Math.random()*5 + "s";
+
+      page3.appendChild(flower);
+    }
+
+    // TOMBOL KELUAR
+    function closeWebsite(){
+
+      window.close();
+
+      // Jika browser tidak mengizinkan close
+      alert("I Love You Siti Mutiaa 💖");
+    }
+
+  </script>
+
+</body>
+</html>
